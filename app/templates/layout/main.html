@@ -2,30 +2,62 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Python News</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Python News</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 
 <body>
-  <div class="bodyMain">
-    <header>
-      <h1>
-        <a href="/">Python News</a>
-      </h1>
-      <nav class="navigation">
-        <a href="/dashboard">dashboard</a>
-        <a href="/logout">logout</a>
-        <a href="/login">login</a>
-      </nav>
-    </header>
-    <main>
-    </main>
-    <footer>
-      Python News - 2023
-    </footer>
-  </div>
+    <div class="bodyMain">
+        <header>
+            <h1>
+                <a href="/">
+                    <image src="PythonNews.png" width="200" length="100" />
+                </a>
+            </h1>
+            <nav class="navigation">
+                <a id="navItem" href="/dashboard">dashboard</a>
+                <a id="navItem" href="/logout">logout</a>
+                <a id="navItem" href="/login">login</a>
+            </nav>
+        </header>
+        <main>
+           <!--Testing News Form-->
+            <form>
+                <div class="form-group">
+                    <label for="titleInput">Title</label>
+                    <input type="text" class="form-control" id="titleInput" placeholder="News title">
+                </div>
+                <div class="form-group">
+                    <label for="linkInput">Link</label>
+                    <textarea class="form-control" id="linkInput" rows="2" placeholder="URL"></textarea>
+                </div>
+            </form>
+           <!--Testing Login Form-->
+           <form>
+            <div class="form-group">
+              <label for="emailInput">Email address</label>
+              <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">E-mail info won't be shared</small>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword">Password</label>
+              <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-secondary">Submit</button>
+          </form>
+
+        </main>
+        <footer>
+            Python News - 2023
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 </body>
 
