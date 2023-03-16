@@ -1,5 +1,4 @@
-from app.models import User
-from app.models import User, Post
+from app.models import User, Post, Comment
 from app.db import Session, Base, engine
 
 # drop and rebuild tables
@@ -27,6 +26,17 @@ db.add_all([
   Post(title='The digital engineering revolution is here — could Python be the key to upskilling?', post_url='https://thenextweb.com/news/digital-engineering-could-python-key-to-upskilling', user_id=3),
   Post(title='Python Packaging Strategy Discussion Summary - Part 1', post_url='https://pyfound.blogspot.com/2023/02/python-packaging-strategy-discussion.html', user_id=4)
 ])
+db.commit()
+
+# insert comments
+db.add_all([
+  Comment(comment_text='Comment 1', user_id=1, post_id=2),
+  Comment(comment_text='Comment 2', user_id=1, post_id=3),
+  Comment(comment_text='Comment 3', user_id=2, post_id=1),
+  Comment(comment_text='Comment 4', user_id=2, post_id=3),
+  Comment(comment_text='Comment 5', user_id=3, post_id=3)
+])
+
 db.commit()
 
 db.close()
