@@ -1,4 +1,7 @@
-<!--Testing News Form-->
+{% extends "layout/main.html" %}
+
+{% block body %}
+<!--News Form-->
 <form>
     <div class="form-group">
         <label for="titleInput">Title</label>
@@ -9,3 +12,4 @@
         <textarea class="form-control" id="linkInput" rows="2" placeholder="URL"></textarea>
     </div>
 </form>
+{% endblock %}
