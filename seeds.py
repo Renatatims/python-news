@@ -1,4 +1,4 @@
-from app.models import User, Post, Comment
+from app.models import User, Post, Comment, Vote
 from app.db import Session, Base, engine
 
 # drop and rebuild tables
@@ -35,6 +35,17 @@ db.add_all([
   Comment(comment_text='Comment 3', user_id=2, post_id=1),
   Comment(comment_text='Comment 4', user_id=2, post_id=3),
   Comment(comment_text='Comment 5', user_id=3, post_id=3)
+])
+
+db.commit()
+
+# insert votes
+db.add_all([
+  Vote(user_id=1, post_id=3),
+  Vote(user_id=1, post_id=3),
+  Vote(user_id=2, post_id=4),
+  Vote(user_id=3, post_id=2),
+  Vote(user_id=4, post_id=4)
 ])
 
 db.commit()
