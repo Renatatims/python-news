@@ -15,11 +15,20 @@ Session = sessionmaker(bind=engine)
 # Base class variable - map the models to real MySQL tables
 Base = declarative_base()
 
-def init_db():
+def init_db(app):
   Base.metadata.create_all(engine)
+
+  app.teardown_appcontext(close_db)
 
 def get_db():
   if 'db' not in g:
     # store db connection in app context
     g.db = Session()
   return g.db
+
+# Close the database connection
+def close_db(e=None):
+  db = g.pop('db', None)
+
+  if db is not None:
+    db.close()
