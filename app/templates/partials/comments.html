@@ -1,22 +1,15 @@
 <!--Comments grid-->
 <div class="row">
+  {% for comment in comments %}
     <div class="col-sm-6">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Comment by username on date </h5>
-          <p class="card-text">Comment user</p>
-
+          <h5 class="card-title">{{comment.user.username}}</h5>
+          <p class="card-text"> {{comment.comment_text}} </p>
         </div>
       </div>
     </div>
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Comment by username on date</h5>
-          <p class="card-text">Comment user</p>
-        </div>
-      </div>
-    </div>
+  {% endfor %}  
   </div>
 
 

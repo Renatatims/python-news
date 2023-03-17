@@ -22,4 +22,8 @@
     </div>
 </form>
 
+{% with comments=post.comments %}
+  {% include "partials/comments.html" %}
+{% endwith %}
+
 {% endblock %}
