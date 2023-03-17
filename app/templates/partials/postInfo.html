@@ -1,0 +1,29 @@
+ <!-- Post Card-->
+ <div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title"><a href="{{post.post_url}}" target="_blank">{{post.title}}</a></h5>
+        <h6 class="card-subtitle mb-2 text-muted">posted by {{post.user.username}} on {{post.created_at|format_date}}</h6>
+        <h8 class="card-subtitle mb-2 text-muted"> available at: {{post.post_url|format_url}}</h8> 
+        <p class="card-text">{{post.comments|length}} {{post.comments|length|format_plural('comment')}}</p>
+        <!--How many likes-->
+         <a href="#" class="card-link">
+            <span class="material-icons">
+                <span>{{post.vote_count}}</span>
+                favorite
+            </span>
+        </a> 
+        <!--How many comments-->
+        <a href="/post/{{post.id}}" class="card-link">
+            <span class="material-icons">
+                <span>{{post.comments|length}}</span>
+                chat  
+            </span>
+        </a>
+        <!--Link to news-->
+        <a href="{{post.post_url}}" target="_blank" class="card-link">
+            <span class="material-icons">
+                link
+            </span>
+        </a>
+    </div>
+</div>

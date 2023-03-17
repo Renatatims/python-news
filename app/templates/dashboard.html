@@ -11,5 +11,23 @@
         <label for="linkInput">Link</label>
         <textarea class="form-control" id="linkInput" rows="2" placeholder="URL"></textarea>
     </div>
+    <button type="submit" class="btn btn-secondary">Post</button>
 </form>
+
+<section>
+    <h2>Your Posts</h2>
+    <ol>
+      {% for post in posts %}
+      <li>
+        {% include "partials/post-info.html" %}
+        <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+
+{% if posts|length > 0 %}
+
+{% endif %}
+
 {% endblock %}
