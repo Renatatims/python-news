@@ -1,3 +1,5 @@
+{% extends "layout/main.html" %}
+{% block body %}
 <!--Edit Post form-->
 <div>
     <a href="/dashboard"><span class="material-icons">account_circle</span> Back to Dashboard</a>
@@ -20,3 +22,9 @@
         </div>
     </form>
 </div>
+
+{% with comments=post.comments %}
+  {% include "partials/comments.html" %}
+{% endwith %}
+
+{% endblock %}
