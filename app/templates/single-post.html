@@ -4,6 +4,7 @@
 {% include "partials/postInfo.html" %}
 
 <!--Single Post-->
+{% if loggedIn == True %}
 <form>
     <div class="form-row form-group">
         <div class="col-6">
@@ -21,6 +22,7 @@
         </div>
     </div>
 </form>
+{% endif %}
 
 {% with comments=post.comments %}
   {% include "partials/comments.html" %}

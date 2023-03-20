@@ -18,9 +18,12 @@
                     <image src="images/PythonNews.png" width="200" length="100" />
                 </a>
                 <div class="navItems">
+                    {% if loggedIn == True %}
                     <a id="navItem" href="/dashboard">dashboard</a>
                     <a id="navItem" href="/logout">logout</a>
+                    {% else %}
                     <a id="navItem" href="/login">login</a>
+                    {% endif %}
                 </div>
             </nav>
         </header>
@@ -35,7 +38,9 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
+    {% if loggedIn %}
+    <script src="/javascript/logout.js"></script>
+    {% endif %}
 </body>
 
 </html>
