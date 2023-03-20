@@ -38,7 +38,18 @@ a:hover {
   padding: 15px;
 }
 
+#logout {
+  color: #a6c4bc;
+  padding: 15px;
+  cursor: pointer;
+}
+
 #navItem:hover {
+  text-decoration: none;
+  color: #778f89;
+}
+
+#logout:hover {
   text-decoration: none;
   color: #778f89;
 }
