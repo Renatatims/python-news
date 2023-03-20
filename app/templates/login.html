@@ -2,7 +2,8 @@
 
 {% block body %}
 <!--Login Form-->
-<form class="login-form">
+<div class="card" style="width:auto; background-color:#685a6c">
+<form class="login-form" style="padding: 20px">
     <h2>Login</h2>
     <div class="form-group">
         <label for="emailInput">Email address</label>
@@ -15,10 +16,11 @@
     </div>
     <button type="submit" class="btn btn-secondary">Login</button>
 </form>
+</div>
 
 </br>
-
-<form class="signup-form">
+<div class="card" style="width:auto; background-color:#685a6c">
+<form class="signup-form" style="padding: 20px">
     <h2>Signup</h2>
     <div class="form-group">
         <label for="inputSignupUsername">Username</label>
@@ -35,6 +37,7 @@
     </div>
     <button type="submit" class="btn btn-secondary">Signup</button>
 </form>
+</div>
 
 <script src="/javascript/login.js"></script>
 {% endblock %}
