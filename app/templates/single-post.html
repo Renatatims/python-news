@@ -5,13 +5,13 @@
 
 <!--Single Post-->
 {% if loggedIn == True %}
-<form>
+<form class="commentForm">
     <div class="form-row form-group">
         <div class="col-6">
             <label for="commentInput">Comment</label>
-            <textarea class="form-control" id="commentInput" rows="3"
+            <textarea class="form-control" name="commentInput" rows="3"
                 placeholder="enter comment"></textarea>
-            <button type="button" class="btn btn-success">
+            <button type="submit" class="btn btn-success">
                 <span class="material-icons">
                     done
                 </span>
@@ -27,5 +27,9 @@
 {% with comments=post.comments %}
   {% include "partials/comments.html" %}
 {% endwith %}
+
+{% if loggedIn == True %}
+<script src="/javascript/comment.js"></script>
+{% endif %}
 
 {% endblock %}
