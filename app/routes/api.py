@@ -32,7 +32,7 @@ def signup():
 
   return jsonify(id = newUser.id)
 
-#logout route 
+# logout route 
 @bp.route('/users/logout', methods=['POST'])
 def logout():
   # remove session variables
@@ -59,7 +59,7 @@ def login():
 
   return jsonify(id = user.id)
 
-#Commments Route
+# Commments Route
 @bp.route('/comments', methods=['POST'])
 def comment():
   data = request.get_json()
@@ -82,3 +82,23 @@ def comment():
     return jsonify(message = 'Comment failed'), 500
   
   return jsonify(id = newComment.id)
+
+# Upvote posts - PUT request - will add likes every time the user clicks the heart button
+
+@bp.route('/posts/upvote', methods=['PUT'])
+def upvote():
+  data = request.get_json()
+  db = get_db()
+  try:
+    # create a new vote with incoming id and session id
+    newVote = Vote(
+      post_id = data['post_id'],
+      user_id = session.get('user_id')
+    )
+    db.add(newVote)
+    db.commit()
+  except:
+    print(sys.exc_info()[0])
+    db.rollback()
+    return jsonify(message = 'Upvote failed'), 500
+  return '', 204
