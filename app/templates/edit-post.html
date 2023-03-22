@@ -3,14 +3,14 @@
 <!--Edit Post form-->
 <div>
     <a href="/dashboard"><span class="material-icons">account_circle</span> Back to Dashboard</a>
-    <form>
+    <form class = "edit-post-form">
         <div class="form-row form-group">
             <div class="col-6">
                 <label for="titleInput">Title</label>
                 <input type="text" class="form-control" id="titleInput" placeholder="{{post.title}}">
                 <span>({{post.post_url|format_url}})</span>
                 <p> {{post.vote_count|format_plural('likes')}} by you on {{post.created_at|format_date}}</p>
-                <button type="button" class="btn btn-success">Save</button>
+                <button type="submit" class="btn btn-success">Save</button>
                 <button type="button" class="btn btn-danger">Delete</button>
             </div>
         </div>
@@ -29,4 +29,6 @@
   {% include "partials/comments.html" %}
 {% endwith %}
 
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/comment.js"></script>
 {% endblock %}
