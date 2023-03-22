@@ -2,7 +2,7 @@
 
 {% block body %}
 <!--News Form-->
-<form>
+<form class = "news-form">
     <div class="form-group">
         <label for="titleInput">Title</label>
         <input type="text" class="form-control" id="titleInput" placeholder="News title">
@@ -20,7 +20,7 @@
     <ol>
       {% for post in posts %}
       <li>
-        {% include "partials/post-info.html" %}
+        {% include "partials/postInfo.html" %}
         <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
       </li>
       {% endfor %}
@@ -28,5 +28,7 @@
   </section>
 
 {% endif %}
+
+<script src="/javascript/add-post.js"></script>
 
 {% endblock %}

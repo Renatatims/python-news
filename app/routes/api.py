@@ -84,11 +84,11 @@ def comment():
   return jsonify(id = newComment.id)
 
 # Upvote posts - PUT request - will add likes every time the user clicks the heart button
-
 @bp.route('/posts/upvote', methods=['PUT'])
 def upvote():
   data = request.get_json()
   db = get_db()
+
   try:
     # create a new vote with incoming id and session id
     newVote = Vote(
@@ -99,6 +99,68 @@ def upvote():
     db.commit()
   except:
     print(sys.exc_info()[0])
+
     db.rollback()
     return jsonify(message = 'Upvote failed'), 500
+  
+  return '', 204
+
+# Posts routes - create new Posts
+@bp.route('/posts', methods=['POST'])
+def create():
+  data = request.get_json()
+  db = get_db()
+
+  try:
+    # create a new post
+    newPost = Post(
+      title = data['title'],
+      post_url = data['post_url'],
+      user_id = session.get('user_id')
+    )
+
+    db.add(newPost)
+    db.commit()
+  except:
+    print(sys.exc_info()[0])
+    
+    db.rollback()
+    return jsonify(message = 'Post failed'), 500
+  
+  return jsonify(id = newPost.id)
+
+#Update Single Posts by ID 
+@bp.route('/posts/<id>', methods=['PUT'])
+def update(id):
+  data = request.get_json()
+  db = get_db()
+
+  try:
+    # retrieve post and update title property
+    post = db.query(Post).filter(Post.id == id).one()
+    post.title = data['title']
+    db.commit()
+  except:
+    print(sys.exc_info()[0])
+
+    db.rollback()
+    return jsonify(message = 'Post not found'), 404
+  
+  return '', 204
+
+# Delete Posts by Id
+@bp.route('/posts/<id>', methods=['DELETE'])
+def delete(id):
+  db = get_db()
+
+  try:
+    # delete post from db
+    db.delete(db.query(Post).filter(Post.id == id).one())
+    db.commit()
+  except:
+    print(sys.exc_info()[0])
+
+    db.rollback()
+    return jsonify(message = 'Post not found'), 404
+
   return '', 204
