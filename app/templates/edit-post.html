@@ -11,7 +11,7 @@
                 <span>({{post.post_url|format_url}})</span>
                 <p> {{post.vote_count|format_plural('likes')}} by you on {{post.created_at|format_date}}</p>
                 <button type="submit" class="btn btn-success">Save</button>
-                <button type="button" class="btn btn-danger">Delete</button>
+                <button type="button" class="btn btn-danger" id="delete-post">Delete</button>
             </div>
         </div>
         <div class="form-row form-group">
@@ -31,4 +31,5 @@
 
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/comment.js"></script>
+<script src="/javascript/delete-post.js"></script>
 {% endblock %}

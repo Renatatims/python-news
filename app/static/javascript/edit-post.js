@@ -1,3 +1,4 @@
+//Edit Posts Function - update PUT method
 async function editPostHandler(event) {
     event.preventDefault();
   
