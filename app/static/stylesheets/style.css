@@ -55,7 +55,6 @@ a:hover {
 }
 
 .bodyMain {
-  width: 100%;
   min-height: 100%;
   margin: 0 auto;
   display: flex;
@@ -75,11 +74,6 @@ header h1 {
   font-size: 1em;
 }
 
-main {
-  flex: 1;
-  padding: 2% 4%;
-}
-
 form {
   color: #a6c4bc;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -88,6 +82,19 @@ form {
 .card-footer{
   position:relative;
   display:inline-flex;
+}
+
+
+.card  {
+  width: 300px; /* Set maximum width */
+  height: 300px; /* Set maximum height */
+  margin-left: 20px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15)
+  
+}
+
+.card:active {
+  transform: scale(1.1);
 }
 
 #comments-text{
@@ -102,6 +109,10 @@ footer {
   color: #a6c4bc;
   display: flex;
   justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: auto;
   padding: 1%;
   font-size: 110%;
+  width: 100%;
 }
