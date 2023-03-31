@@ -9,6 +9,9 @@ This application was built using Python and allows the users to post, edit, and 
 ## Preview
  ![Preview](app/static/images/Capture1.PNG)
 
+## Link to Application
+App available at: https://renata-python-news.herokuapp.com/
+
 ## Table of Contents
 
 - [Installation](#installation)
