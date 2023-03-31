@@ -2,30 +2,30 @@
 
 {% block body %}
 
-    <h2 class="m-3 ml-5" id="headerComment">
-        Add a Comment or give a Like
-        <span class="material-icons" id="like-button">
-            favorite
-        </span>
-    </h2>
-    {% include "partials/postEdit.html" %}
+<h2 class="m-3 ml-5" id="headerComment">
+    Add a Comment or give a Like
+    <span class="material-icons" id="like-button">
+        favorite
+    </span>
+</h2>
+{% include "partials/postEdit.html" %}
 
-    <!--Single Post-->
-    {% if loggedIn == True %}
-    <form class="commentForm m-3">
-        <div class="form-row form-group">
-            <div class="col-lg-4 col-md-6 col-sm-12 p-3">
-                <label for="commentInput" class="ml-1">Comment</label>
-                <textarea class="form-control ml-1" name="commentInput" rows="3" placeholder="enter comment"></textarea>
-                <button type="submit" class="btn btn-success m-1">
-                    <span class="material-icons">
-                        done
-                    </span>
-                </button>
-            </div>
+<!--Single Post-->
+{% if loggedIn == True %}
+<form class="commentForm m-3">
+    <div class="form-row form-group">
+        <div class="col-lg-4 col-md-6 col-sm-12 p-3">
+            <label for="commentInput" class="ml-1">Comment</label>
+            <textarea class="form-control ml-1" name="commentInput" rows="3" placeholder="enter comment"></textarea>
+            <button type="submit" class="btn btn-success m-1 px-2 py-1" style="font-size: 5px">
+                <span class="material-symbols-outlined">
+                    send
+                </span>
+            </button>
         </div>
-    </form>
-    {% endif %}
+    </div>
+</form>
+{% endif %}
 
 
 {% with comments=post.comments %}
