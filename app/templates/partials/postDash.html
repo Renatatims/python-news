@@ -1,0 +1,45 @@
+<!-- Post Card-->
+<div class="col-xl-2 col-lg-4 col-md-6 col-sm-8 col-12 my-4 ml-5 mr-1 mr-sm-0 cardComment">
+    <div class="card animate__animated animate__pulse">
+        <div class="card-body animate__animated animate__pulse">
+            <h5 class="card-title"><a href="{{post.post_url}}" target="_blank">{{post.title}}</a></h5>
+            <h6 class="card-subtitle mb-2 text-muted">posted by {{post.user.username}} on
+                {{post.created_at|format_date}}
+            </h6>
+
+            <h8 class="card-subtitle mb-2"> available at: {{post.post_url|format_url}}</h8>
+
+        </div>
+        <div class="card-subtitle mb-2 text-muted" id="comments-text">
+            <p class="card-text">{{post.comments|length}} {{post.comments|length|format_plural('comment')}}</p>
+        </div>
+        <div class="card-footer">
+            <!--How many likes-->
+            <a href="#" class="card-link">
+                <span class="material-icons">
+                    <span>{{post.vote_count}}</span>
+                    favorite
+                </span>
+            </a>
+            <!--How many comments-->
+            <a href="/post/{{post.id}}" class="card-link">
+                <span class="material-icons">
+                    <span>{{post.comments|length}}</span>
+                    chat
+                </span>
+            </a>
+            <!--Link to news-->
+            <a href="{{post.post_url}}" target="_blank" class="card-link">
+                <span class="material-icons">
+                    link
+                </span>
+            </a>
+            <!--Link to edit post-->
+            <a href="/dashboard/edit/{{post.id}}" class="card-link">
+                <span class="material-symbols-outlined">
+                    edit_note
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
