@@ -15,27 +15,27 @@
         </div>
         <div class="card-footer">
             <!--How many likes-->
-            <a href="#" class="card-link">
+            <a href="/post/{{post.id}}" class="card-link mx-3">
                 <span class="material-icons">
                     <span>{{post.vote_count}}</span>
                     favorite
                 </span>
             </a>
             <!--How many comments-->
-            <a href="/post/{{post.id}}" class="card-link">
+            <a href="/post/{{post.id}}" class="card-link mx-3">
                 <span class="material-icons">
                     <span>{{post.comments|length}}</span>
                     chat
                 </span>
             </a>
             <!--Link to news-->
-            <a href="{{post.post_url}}" target="_blank" class="card-link">
+            <a href="{{post.post_url}}" target="_blank" class="card-link mx-3">
                 <span class="material-icons">
                     link
                 </span>
             </a>
             <!--Link to edit post-->
-            <a href="/dashboard/edit/{{post.id}}" class="card-link">
+            <a href="/dashboard/edit/{{post.id}}" class="card-link mx-3">
                 <span class="material-symbols-outlined">
                     edit_note
                 </span>

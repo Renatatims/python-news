@@ -1,17 +1,16 @@
 {% extends "layout/main.html" %}
 
 {% block body %}
-
-<h2 class="m-3 ml-5" id="headerComment">
-    Add a Comment or give a Like
-    <span class="material-icons" id="like-button">
-        favorite
-    </span>
-</h2>
 {% include "partials/postEdit.html" %}
 
 <!--Single Post-->
 {% if loggedIn == True %}
+<h3 class="m-3 ml-5" id="headerComment">
+    Add a Comment or give a Like
+    <span class="material-icons" id="like-button">
+        favorite
+    </span>
+</h3>
 <form class="commentForm m-3">
     <div class="form-row form-group">
         <div class="col-lg-4 col-md-6 col-sm-12 p-3">
@@ -34,6 +33,7 @@
 
 {% if loggedIn == True %}
 <script src="/javascript/comment.js"></script>
-{% endif %}
 <script src="/javascript/upvote.js"></script>
+{% endif %}
+
 {% endblock %}

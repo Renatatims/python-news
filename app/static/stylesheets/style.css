@@ -79,9 +79,15 @@ header h1 {
   color: #a6c4bc;
 }
 
+#headerPosts {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #a6c4bc;
+}
+
 form {
   color: #a6c4bc;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 20px;
 }
 
 .card-footer{
@@ -100,6 +106,10 @@ form {
 
 .card:active {
   transform: scale(1.1);
+}
+
+.card-link {
+  color: rgb(61, 60, 60);
 }
 
 #like-button {
