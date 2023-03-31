@@ -16,15 +16,14 @@
 
 {% if posts|length > 0 %}
 <section>
-    <h2>Your Posts</h2>
-    <ol>
+    <h3 class="m-3 ml-5" id="headerPosts">Your Posts: </h3>
+    <div class="container-fluid">
+      <div class="row">
       {% for post in posts %}
-      <li>
-        {% include "partials/postInfo.html" %}
-        <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-      </li>
-      {% endfor %}
-    </ol>
+       {% include "partials/postDash.html" %}     
+       {% endfor %}
+    </div>
+  </div>
   </section>
 
 {% endif %}
