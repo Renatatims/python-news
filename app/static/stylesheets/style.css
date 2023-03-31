@@ -90,6 +90,13 @@ form {
   margin: 20px;
 }
 
+#editForm{
+  border: 1px solid rgb(194, 189, 189);
+  padding: 10px;
+  border-radius: 10px;
+  
+}
+
 .card-footer{
   position:relative;
   display:inline-flex;
@@ -129,6 +136,11 @@ form {
 
 #like-button .vote-count {
   color: grey;
+}
+
+#backDash {
+  color: #a6c4bc;
+  margin: 20px;
 }
 
 #comments-text{

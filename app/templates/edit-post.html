@@ -1,32 +1,49 @@
 {% extends "layout/main.html" %}
 {% block body %}
 <!--Edit Post form-->
-<div>
-    <a href="/dashboard"><span class="material-icons">account_circle</span> Back to Dashboard</a>
-    <form class = "edit-post-form">
-        <div class="form-row form-group">
-            <div class="col-6">
-                <label for="titleInput">Title</label>
-                <input type="text" class="form-control" id="titleInput" placeholder="{{post.title}}">
-                <span>({{post.post_url|format_url}})</span>
-                <p> {{post.vote_count|format_plural('likes')}} by you on {{post.created_at|format_date}}</p>
-                <button type="submit" class="btn btn-success">Save</button>
-                <button type="button" class="btn btn-danger" id="delete-post">Delete</button>
-            </div>
+
+<h3 class="m-3 ml-5" id="headerComment">
+    Edit or Delete a Post
+</h3>
+<form class="edit-post-form">
+    <div class="form-row form-group">
+        <div class="col-md-6 col-sm-12 p-3" id="editForm">
+            <label for="titleInput">Title</label>
+            <input type="text" class="form-control" id="titleInput" placeholder="{{post.title}}">
+            <span>URL: {{post.post_url|format_url}}</span>
+            <p> by {{post.user.username}} on {{post.created_at|format_date}}</p>
+            <p> {{post.vote_count}} {{post.vote_count|format_plural('like')}} </p>
+            <button type="submit" class="btn btn-success m-1" style="font-size: 5px">
+                <span class="material-symbols-outlined">
+                    done
+                </span>
+            </button>
+            <button type="button" class="btn btn-danger m-1" style="font-size: 5px" id="delete-post">
+                <span class="material-symbols-outlined">
+                    delete_forever
+                </span>
+            </button>
         </div>
-        <div class="form-row form-group">
-            <div class="col-6">
-                <label for="commentInput">Comment</label>
-                <textarea class="form-control" id="commentInput" rows="3"
-                    placeholder="enter comment"></textarea>
-                <button type="button" class="btn btn-secondary">Add Comment</button>
-            </div>
-        </div>
-    </form>
+    </div>
+</form>
+
+<form class="commentForm m-3">
+<div class="form-row form-group">
+    <div class="col-md-6 col-sm-12 p-3" id="editForm">
+        <label for="commentInput">Comment</label>
+        <textarea class="form-control" name="commentInput" rows="3" placeholder="enter comment"></textarea>
+        <button type="submit" class="btn btn-success my-1" style="font-size: 5px">
+            <span class="material-symbols-outlined">
+                send
+            </span>
+        </button>
+    </div>
 </div>
+</form>
+
 
 {% with comments=post.comments %}
-  {% include "partials/comments.html" %}
+{% include "partials/comments.html" %}
 {% endwith %}
 
 <script src="/javascript/edit-post.js"></script>
