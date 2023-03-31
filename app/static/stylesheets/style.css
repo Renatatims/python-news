@@ -107,12 +107,15 @@ form {
   width: 300px; /* Set maximum width */
   height: 300px; /* Set maximum height */
   margin-left: 20px;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15)
-  
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); 
 }
 
-.card:active {
-  transform: scale(1.1);
+#cardComment{
+  width: 300px; /* Set maximum width */
+  height: 150px; /* Set maximum height */
+  margin-left: 20px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  background-color: #c3ddd6;
 }
 
 .card-link {
@@ -136,6 +139,10 @@ form {
 
 #like-button .vote-count {
   color: grey;
+}
+
+#editIcon {
+  color: rgb(16, 151, 106)
 }
 
 #backDash {

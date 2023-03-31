@@ -1,8 +1,8 @@
 <!--Comments grid-->
 <div class="row">
   {% for comment in comments %}
-    <div class="col-sm-6">
-      <div class="card">
+    <div class="col-md-2 col-sm-12 m-2 p-2">
+      <div class="card" id="cardComment">
         <div class="card-body">
           <h5 class="card-title">{{comment.user.username}} on {{comment.created_at|format_date}}</h5>
           <p class="card-text"> {{comment.comment_text}} </p>

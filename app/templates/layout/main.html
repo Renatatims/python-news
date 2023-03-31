@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
@@ -17,7 +18,8 @@
         <header>
             <nav class="navigation">
                 <a href="/">
-                    <image src="{{ url_for('static', filename='images/PythonNews.png', _external=True) }}" width="200" length="100" />
+                    <image src="{{ url_for('static', filename='images/PythonNews.png', _external=True) }}" width="200"
+                        length="100" />
                 </a>
                 <div class="navItems">
                     {% if loggedIn == True %}
@@ -33,7 +35,10 @@
             {% block body %}{% endblock %}
         </main>
         <footer>
-            Python News - 2023
+            <a href="/">
+                <image src="{{ url_for('static', filename='images/PythonNews.png', _external=True) }}" width="150"
+                    length="500" />
+            </a> 
         </footer>
     </div>
 
