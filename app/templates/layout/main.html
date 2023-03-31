@@ -17,7 +17,7 @@
         <header>
             <nav class="navigation">
                 <a href="/">
-                    <image src="images/PythonNews.png" width="200" length="100" />
+                    <image src="{{ url_for('static', filename='images/PythonNews.png', _external=True) }}" width="200" length="100" />
                 </a>
                 <div class="navItems">
                     {% if loggedIn == True %}

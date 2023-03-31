@@ -1,36 +1,39 @@
 {% extends "layout/main.html" %}
 
 {% block body %}
-{% include "partials/postInfo.html" %}
 
-<!--Single Post-->
-{% if loggedIn == True %}
-<form class="commentForm">
-    <div class="form-row form-group">
-        <div class="col-6">
-            <label for="commentInput">Comment</label>
-            <textarea class="form-control" name="commentInput" rows="3"
-                placeholder="enter comment"></textarea>
-            <button type="submit" class="btn btn-success">
-                <span class="material-icons">
-                    done
-                </span>
-            </button>
-            <button type="button" class="btn btn-danger" id="like-button">
-                <span class="material-icons">favorite_border</span>
-            </button>
+    <h2 class="m-3 ml-5" id="headerComment">
+        Add a Comment or give a Like
+        <span class="material-icons" id="like-button">
+            favorite
+        </span>
+    </h2>
+    {% include "partials/postEdit.html" %}
+
+    <!--Single Post-->
+    {% if loggedIn == True %}
+    <form class="commentForm m-3">
+        <div class="form-row form-group">
+            <div class="col-lg-4 col-md-6 col-sm-12 p-3">
+                <label for="commentInput" class="ml-1">Comment</label>
+                <textarea class="form-control ml-1" name="commentInput" rows="3" placeholder="enter comment"></textarea>
+                <button type="submit" class="btn btn-success m-1">
+                    <span class="material-icons">
+                        done
+                    </span>
+                </button>
+            </div>
         </div>
-    </div>
-</form>
-{% endif %}
+    </form>
+    {% endif %}
+
 
 {% with comments=post.comments %}
-  {% include "partials/comments.html" %}
+{% include "partials/comments.html" %}
 {% endwith %}
 
 {% if loggedIn == True %}
 <script src="/javascript/comment.js"></script>
-<script src="/javascript/upvote.js"></script>
 {% endif %}
-
+<script src="/javascript/upvote.js"></script>
 {% endblock %}

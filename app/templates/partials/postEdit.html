@@ -15,14 +15,14 @@
         </div>
         <div class="card-footer">
             <!--How many likes-->
-            <a href="/post/{{post.id}}" class="card-link">
+            <button type="button" class="card-link" id="like-button">
                 <span class="material-icons">
-                    <span>{{post.vote_count}}</span>
+                    <span class="vote-count">{{post.vote_count}}</span>
                     favorite
                 </span>
-            </a>
+            </button>
             <!--How many comments-->
-            <a href="/post/{{post.id}}" class="card-link">
+            <a href="#comment-form" class="card-link">
                 <span class="material-icons">
                     <span>{{post.comments|length}}</span>
                     chat
