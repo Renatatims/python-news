@@ -7,7 +7,7 @@
 This application was built using Python and allows the users to post, edit, and delete news articles. Users can also comment on articles, upvote and view other users' comments.
 
 ## Preview
- ![Preview](app/static/images/Capture1.png)
+ ![Preview](app/static/images/Capture1.PNG)
 
 ## Table of Contents
 
@@ -68,7 +68,7 @@ python -m flask run
 7. Responsive design to adapt to different screen sizes
 8. Deployment using Gunicorn for a production-ready server.
 
-![Preview](app/static/images/Capture2.png)
+![Preview](app/static/images/Capture2.PNG)
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
