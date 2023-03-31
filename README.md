@@ -68,6 +68,8 @@ python -m flask run
 7. Responsive design to adapt to different screen sizes
 8. Deployment using Gunicorn for a production-ready server.
 
+![Preview](app/static/images/Capture2.png)
+
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
